@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row" [formGroup]="filterForm">
+    <div class="col-4 form-group">
+      <label class="" for="">Filtrar:</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="textFilter"
+        placeholder="Filtrar... "
+      />
+    </div>
+  </div>
+
+  <!-- STUDENTS LIST -->
+  <div class="row" *ngIf="this.filteredPeopleList.length > 0">
+    <div class="col-8 mt-3">
+      <table
+        matSort
+        class="table table-borderless p-3"
+        *ngIf="this.filteredPeopleList != undefined"
+      >
+        <thead class="">
+          <tr>
+            <th mat-sort-header="name">Nome</th>
+            <th class="text-right">
+              {{ this.filteredPeopleList.length }} Personagens
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let people of this.filteredPeopleList">
+            <td class="text-right">
+              <p class="ml-2 mb-0">
+                <a
+                  [title]="people.name"
+                  [routerLink]="['/', 'people', 'detalhes', people.name]"
+                  (click)="updateCurrentPeople(people)"
+                  >{{ people.name }}</a
+                >
+              </p>
+            </td>
+            <td class="text-center">
+              <button
+                class="btn btn-sm border-radius btn-primary ml-1"
+                [routerLink]="['/', 'people', 'detalhes', people.name]"
+                (click)="updateCurrentPeople(people)"
+              >
+                <span class="mdi mdi-plus"></span> info
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

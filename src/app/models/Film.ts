@@ -1,4 +1,4 @@
-import { People } from "./people";
+import { People } from "./People";
 
 export class Film {
     constructor(title: string, episode_id: number, opening_crawl: string, director: string, producer: string,

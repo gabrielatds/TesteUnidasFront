@@ -1,9 +1,12 @@
 import { Film } from "./Film";
 
 export class People {
-    constructor(name: string, birth_year: string, eye_color: string, gender: string, hair_color: string,
-                height: string, mass: string, skin_color: string, homeworld: string, url: string,
-                created: string, edited: string, films: Film[]) {
+
+    constructor();
+    
+    constructor(name?: string, birth_year?: string, eye_color?: string, gender?: string, hair_color?: string,
+                height?: string, mass?: string, skin_color?: string, homeworld?: string, url?: string,
+                created?: string, edited?: string, films?: Film[]) {
         this.name = name;
         this.birth_year = birth_year;
         this.eye_color = eye_color;
@@ -19,17 +22,17 @@ export class People {
         this.films = films;
     }
 
-    name: string;
-    birth_year: string;
-    eye_color: string;
-    gender: string;
-    hair_color: string;
-    height: string;
-    mass: string;
-    skin_color:string;
-    homeworld: string;
-    films: Film[];
-    url: string
-    created: string;
-    edited: string;
+    name?: string;
+    birth_year?: string;
+    eye_color?: string;
+    gender?: string;
+    hair_color?: string;
+    height?: string;
+    mass?: string;
+    skin_color?:string;
+    homeworld?: string;
+    films?: Film[];
+    url?: string
+    created?: string;
+    edited?: string;
 }
